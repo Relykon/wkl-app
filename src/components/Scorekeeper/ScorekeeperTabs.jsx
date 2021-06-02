@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 // tabs
+import CreateScoreCard from './CreateScoreCard';
 import Rules from '../Rules';
 import Standings from '../Standings';
 import NotFoundPage from '../NotFoundPage';
@@ -66,7 +67,8 @@ export default function ScorekeeperTabs() {
         <Tabs value={value} onChange={handleChange} aria-label="scorekeeper-tabs">
           <Tab label="Rules" {...a11yProps(0)} />
           <Tab label="Standings" {...a11yProps(1)} />
-          <Tab label="Not-Found-Page" {...a11yProps(2)} />
+          <Tab label="Stats" {...a11yProps(2)} />
+          <Tab label="Score A Game" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -76,7 +78,10 @@ export default function ScorekeeperTabs() {
         <Standings />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <NotFoundPage />
+      <img src="https://public.tableau.com/static/images/WK/WKL2019/LeagueStats/1.png" />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <CreateScoreCard />
       </TabPanel>
     </div>
   );
