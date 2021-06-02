@@ -66,7 +66,7 @@ export default function ScorekeeperTabs() {
         <Tabs value={value} onChange={handleChange} aria-label="scorekeeper-tabs">
           <Tab label="Rules" {...a11yProps(0)} />
           <Tab label="Standings" {...a11yProps(1)} />
-          <Tab label="Not-Found-Page" {...a11yProps(2)} />
+          <Tab label="Stats" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -76,7 +76,7 @@ export default function ScorekeeperTabs() {
         <Standings />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <NotFoundPage />
+      <img src="https://public.tableau.com/static/images/WK/WKL2019/LeagueStats/1.png" />
       </TabPanel>
     </div>
   );

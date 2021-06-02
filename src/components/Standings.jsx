@@ -8,6 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+import data from './fakeData';
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -16,23 +18,15 @@ const useStyles = makeStyles({
 
 function createData(team, tauntWs, tauntLs, wins, losses, scored, allowed) {
   return { team, tauntWs, tauntLs, wins, losses, scored, allowed };
-}
+};
 
-const rows = [
-  createData('Dungeons & Ballers', 2, 7, 8, 1, 39, 13),
-  createData('Tragic Kingdom', 7, 2, 7, 2, 44, 33),
-  createData('P.S.A', 5, 4, 7, 2, 63, 35),
-  createData('Objection!',6, 3, 6, 3, 54, 50),
-  createData('NC Double Eh?', 4, 5, 4, 5, 40, 36),
-  createData('Fremont Trolls', 2, 7, 4, 5, 55, 46),
-  createData('Yachty By Nature', 2, 7, 4, 5, 50, 47),
-  createData('Comically Bad', 4, 5, 4, 5, 36, 56),
-  createData('The Wurst', 6, 3, 4, 5, 48, 67),
-  createData('Rookie Mooves', 7, 2, 4, 5, 34, 80)
-];
+const rows = data.teams.map(t => {
+  return createData(t.name, t.record.taunt.wins, t.record.taunt.losses, t.record.game.wins, t.record.game.losses, t.runs_scored, t.runs_allowed);
+});
 
 
-const Standings = () => {
+
+const Standings = ({ data }) => {
   const classes = useStyles();
 
   return (

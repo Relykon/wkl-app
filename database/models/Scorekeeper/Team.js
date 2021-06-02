@@ -5,9 +5,18 @@ const { Schema, model } = mongoose;
 const teamSchema = new Schema({
   _id: Number,
   name: String,
-  players: Array,
-  points: Array,
-  photos: Array
+  record: {
+    taunt: {
+      wins: Number,
+      losses: Number
+    },
+    game: {
+      wins: Number,
+      losses: Number
+    },
+  },
+  runs_scored: Number,
+  runs_allowed: Number
 });
 
 const Team = model('Team', teamSchema);

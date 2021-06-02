@@ -1,5 +1,5 @@
 const fakeData = {
-  gamesPlayed: [
+  games_played: [
     {
       _id: 1,
       date: '2019-06-06',
@@ -88,8 +88,8 @@ const fakeData = {
       },
       verified: true
     }
-  ];
-  teams = [
+  ],
+  teams: [
     {
       _id: 1,
       name: 'Dungeons & Ballers',
