@@ -44,6 +44,7 @@ const scoreCard = new Schema({
     game: String,
     taunt: String
   },
+  notes: String,
   verified: {
     type: Boolean,
     default: false

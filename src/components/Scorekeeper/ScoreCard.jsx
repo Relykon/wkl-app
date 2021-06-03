@@ -19,3 +19,23 @@ const ScoreCard = ({ teamData, selectedTeams }) => {
 };
 
 export default ScoreCard;
+
+
+/*
+<form>
+  Home vs. Visitor
+
+  Table:
+      1   2   3   4   5  total
+  --------------------------
+  H | 0 | 2 | 1 | 0 | 3 |  6 |  // click a square to edit number
+  V | 0 | 2 | 1 | 0 |   |  3 |  // click a finalized number to
+  ---------------------------   // ask to update it
+ Inning: Bottom of 5th
+ Outs: () () ()                [OUT] // confirm 3 outs
+ Foul: () () ()          [FOUL] //confirm foul out
+
+
+ [End Game] // confirm? // not the normal end? double confirm - request reason -> add to game notes
+
+*/

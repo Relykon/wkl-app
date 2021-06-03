@@ -42,6 +42,7 @@ const fakeData = {
         game: 'Rookie Mooves',
         taunt: 'Objection'
       },
+      notes: null,
       verified: true
     },
     {
@@ -86,6 +87,7 @@ const fakeData = {
         game: 'The Wurst',
           taunt: 'Rookie Mooves'
       },
+      notes: null
       verified: true
     }
   ],
