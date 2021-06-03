@@ -93,6 +93,7 @@ const fakeData = {
     {
       _id: 1,
       name: 'Dungeons & Ballers',
+      photo: 'src/assets/img/teamphotos/D&B.jpg',
       record: {
         taunt: {
           wins: 2,
@@ -104,11 +105,12 @@ const fakeData = {
         },
       },
       runs_scored: 39,
-      runs_allowed: 13
+      runs_allowed: 13,
     },
     {
       _id: 2,
       name: 'Tragic Kingdom',
+      photo: 'src/assets/img/teamphotos/TragicKingdom.jpg',
       record: {
         taunt: {
           wins: 7,
@@ -125,6 +127,7 @@ const fakeData = {
     {
       _id: 3,
       name: 'P.S.A.',
+      photo: 'src/assets/img/teamphotos/PSA.jpg',
       record: {
         taunt: {
           wins: 5,
@@ -141,6 +144,7 @@ const fakeData = {
     {
       _id: 4,
       name: 'Objection!',
+      photo: 'src/assets/img/teamphotos/Objection!.jpg',
       record: {
         taunt: {
           wins: 6,
@@ -157,6 +161,7 @@ const fakeData = {
     {
       _id: 5,
       name: 'NC Double Eh?',
+      photo: 'src/assets/img/teamphotos/NCdoubleEh.jpg',
       record: {
         taunt: {
           wins: 4,
@@ -173,6 +178,7 @@ const fakeData = {
     {
       _id: 6,
       name: 'Fremont Trolls',
+      photo: 'src/assets/img/teamphotos/FremontTrolls.jpg',
       record: {
         taunt: {
           wins: 2,
@@ -189,6 +195,7 @@ const fakeData = {
     {
       _id: 7,
       name: 'Yachty By Nature',
+      photo: 'src/assets/img/teamphotos/YachtyByNature.jpg',
       record: {
         taunt: {
           wins: 2,
@@ -205,6 +212,7 @@ const fakeData = {
     {
       _id: 8,
       name: 'Comically Bad',
+      photo: 'src/assets/img/teamphotos/ComicallyBad.jpg',
       record: {
         taunt: {
           wins: 4,
@@ -221,6 +229,7 @@ const fakeData = {
     {
       _id: 9,
       name: 'The Wurst',
+      photo: 'src/assets/img/teamphotos/TheWurst.jpg',
       record: {
         taunt: {
           wins: 6,
@@ -237,6 +246,7 @@ const fakeData = {
     {
       _id: 10,
       name: 'Rookie Mooves',
+      photo: 'src/assets/img/teamphotos/RookieMooves.jpg',
       record: {
         taunt: {
           wins: 7,
