@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
+import data from '../fakeData';
 
 
-
-const ScoreCard = () => {
+const ScoreCard = ({ teamData, selectedTeams }) => {
+  const [inning, setInning] = useState(1);
+  const [outs, setOuts] = useState(0);
 
   return (
     <div id="score-card">
-      <p> HERE's the SCORE CARD! </p>
+      <h3>  {selectedTeams[0]} vs. {selectedTeams[1]} </h3>
+      <div>
+        <span> Inning: {inning} </span>
+        <br/>
+        <span> Outs: {outs} </span>
+      </div>
     </div>
   );
 };

@@ -22,14 +22,19 @@ const CreateScoreCard = () => {
     }
   });
 
+  const selectedTeams = [];
+
   const handleChange = (setFunc, e) => {
     setFunc(e.target.value);
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    selectedTeams.push(homeTeam, visitorTeam);
+    console.log(selectedTeams)
     setGameCreated(true);
     document.getElementById("add-score-card").reset();
+    console.log(selectedTeams)
   };
 
   return (
@@ -45,7 +50,7 @@ const CreateScoreCard = () => {
             {teamSelectOptions}
           </select><br/>
           "Visitor" Team:
-          <select required onClick={() => setVisitorTeamSelected(true)} onChange={(e) => handleChange(setHomeTeam, e)} >
+          <select required onClick={() => setVisitorTeamSelected(true)} onChange={(e) => handleChange(setVisitorTeam, e)} >
             <option value="" disabled={visitorTeamSelected}> Select Team </option>
             {teamSelectOptions}
           </select>
@@ -54,7 +59,7 @@ const CreateScoreCard = () => {
       </form>
       <div id="live-score-card">
         { gameCreated
-          ? <ScoreCard />
+          ? <ScoreCard teamData={data.teams} selectedTeams={selectedTeams}/>
           : null }
       </div>
     </div>
