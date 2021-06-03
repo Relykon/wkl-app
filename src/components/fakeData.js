@@ -87,7 +87,7 @@ const fakeData = {
         game: 'The Wurst',
           taunt: 'Rookie Mooves'
       },
-      notes: null
+      notes: null,
       verified: true
     }
   ],

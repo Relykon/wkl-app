@@ -65,14 +65,14 @@ export default function ScorekeeperTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="scorekeeper-tabs">
-          <Tab label="Rules" {...a11yProps(0)} />
+          <Tab label="Score A Game" {...a11yProps(0)} />
           <Tab label="Standings" {...a11yProps(1)} />
           <Tab label="Stats" {...a11yProps(2)} />
-          <Tab label="Score A Game" {...a11yProps(3)} />
+          <Tab label="Rules" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Rules />
+        <CreateScoreCard />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Standings />
@@ -81,7 +81,7 @@ export default function ScorekeeperTabs() {
       <img src="https://public.tableau.com/static/images/WK/WKL2019/LeagueStats/1.png" />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <CreateScoreCard />
+        <Rules />
       </TabPanel>
     </div>
   );
