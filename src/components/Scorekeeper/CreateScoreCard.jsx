@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ScoreCard from './ScoreCard';
 import data from '../fakeData';
+import { createScoreCard } from '../../controllers/scoreCard';
 
 const teams = data.teams.map((t) => {
   return [t._id, t.name];
@@ -26,6 +27,7 @@ const CreateScoreCard = () => {
 
   const handleChange = (setFunc, e) => {
     setFunc(e.target.value);
+    console.log('createScoreCard:', createScoreCard());
   };
 
   const handleFormSubmit = (e) => {

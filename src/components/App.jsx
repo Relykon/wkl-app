@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useRoutes} from 'hookrouter';
+import React /*{ useState, useEffect }*/ from 'react';
+import { useRoutes } from 'hookrouter';
 import routes from '../router'
 import NavBar from './NavBar.jsx';
 import NotFoundPage from './NotFoundPage.jsx'

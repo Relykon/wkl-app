@@ -24,7 +24,9 @@ const rows = data.teams.map(t => {
   return createData(t.name, t.record.taunt.wins, t.record.taunt.losses, t.record.game.wins, t.record.game.losses, t.runs_scored, t.runs_allowed);
 });
 
-
+let handleCellClick = (e) => {
+  console.log(e.target.textContent);
+}
 
 const Standings = ({ data }) => {
   const classes = useStyles();
@@ -58,12 +60,12 @@ const Standings = ({ data }) => {
               <TableCell component="th" scope="row">
                 {row.team}
               </TableCell>
-              <TableCell align="right">{row.tauntWs}</TableCell>
-              <TableCell align="right">{row.tauntLs}</TableCell>
-              <TableCell align="right">{row.wins}</TableCell>
-              <TableCell align="right">{row.losses}</TableCell>
-              <TableCell align="right">{row.scored}</TableCell>
-              <TableCell align="right">{row.allowed}</TableCell>
+              <TableCell onClick={handleCellClick} align="right"> {row.tauntWs} </TableCell>
+              <TableCell align="right"> {row.tauntLs} </TableCell>
+              <TableCell align="right"> {row.wins} </TableCell>
+              <TableCell align="right"> {row.losses} </TableCell>
+              <TableCell align="right"> {row.scored} </TableCell>
+              <TableCell align="right"> {row.allowed} </TableCell>
             </TableRow>
           ))}
         </TableBody>
