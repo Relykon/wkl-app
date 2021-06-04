@@ -30,14 +30,10 @@ const CreateScoreCard = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(homeTeam, visitorTeam)
-    // setMatchup(homeTeam, visitorTeam);
     setGameCreated(true);
-    // console.log('matchup2', matchup)
     document.getElementById("add-score-card").reset();
     setHomeTeamSelected(false);
     setVisitorTeamSelected(false);
-    // console.log('matchup3', matchup);
     // console.log('createScoreCard:', createScoreCard());
   };
 
@@ -60,15 +56,18 @@ const CreateScoreCard = () => {
             {teamSelectOptions}
           </select>
           <input type="submit" value="Begin Game" />
+          {gameCreated
+            ? <p> Thanks for keeping score {name} </p>
+            : null}
         </div>
       </form>
       {gameCreated
         ? <div id="live-score-card">
-            <ScoreCard teamData={data.teams} home={homeTeam} visitor={visitorTeam} />
-          </div>
+          <ScoreCard teamData={data.teams} home={homeTeam} visitor={visitorTeam} keeper={name} />
+        </div>
         : <div id="live-score-card">
-            <ScoreCard teamData={data.teams} matchup={null} />
-          </div>
+          <ScoreCard teamData={data.teams} matchup={null} />
+        </div>
       }
     </div>
   );
