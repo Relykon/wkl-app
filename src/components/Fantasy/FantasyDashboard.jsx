@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React/*, { useState }*/ from 'react';
 import { A } from 'hookrouter';
 
 
@@ -9,9 +9,9 @@ const FantasyDashboard = () => {
   // const [] = useState();
 
 
-  const handleChange = (setFunc, e) => {
-    setFunc(e.target.value);
-  };
+  // const handleChange = (setFunc, e) => {
+  //   setFunc(e.target.value);
+  // };
 
   return (
     <div className="fantasy-main">

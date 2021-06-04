@@ -11,7 +11,6 @@ import PropTypes from 'prop-types';
 import CreateScoreCard from './CreateScoreCard';
 import Rules from '../Rules';
 import Standings from '../Standings';
-import NotFoundPage from '../NotFoundPage';
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -65,23 +64,23 @@ export default function ScorekeeperTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="scorekeeper-tabs">
-          <Tab label="Rules" {...a11yProps(0)} />
+          <Tab label="Score A Game" {...a11yProps(0)} />
           <Tab label="Standings" {...a11yProps(1)} />
           <Tab label="Stats" {...a11yProps(2)} />
-          <Tab label="Score A Game" {...a11yProps(3)} />
+          <Tab label="Rules" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Rules />
+        <CreateScoreCard />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Standings />
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <img src="https://public.tableau.com/static/images/WK/WKL2019/LeagueStats/1.png" />
+      <img src="https://public.tableau.com/static/images/WK/WKL2019/LeagueStats/1.png" alt="wkl 2019 season stats!"/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <CreateScoreCard />
+        <Rules />
       </TabPanel>
     </div>
   );

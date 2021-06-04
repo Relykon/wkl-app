@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import ScoreCard from './ScoreCard';
 import data from '../fakeData';
+import { createScoreCard } from '../../controllers/scoreCard';
 
 const teams = data.teams.map((t) => {
   return [t._id, t.name];
 });
 
 const CreateScoreCard = () => {
+  const [gameCreated, setGameCreated] = useState(false);
   const [name, setName] = useState(null);
   const [homeTeam, setHomeTeam] = useState(null);
   const [visitorTeam, setVisitorTeam] = useState(null);
@@ -20,34 +23,47 @@ const CreateScoreCard = () => {
     }
   });
 
+  const selectedTeams = [];
+
   const handleChange = (setFunc, e) => {
     setFunc(e.target.value);
+    console.log('createScoreCard:', createScoreCard());
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    selectedTeams.push(homeTeam, visitorTeam);
+    console.log(selectedTeams)
+    setGameCreated(true);
     document.getElementById("add-score-card").reset();
+    console.log(selectedTeams)
   };
 
   return (
     <div>
       <h3> Score a Game! </h3>
-      <form id="add-score-card">
+      <form id="add-score-card" onSubmit={handleFormSubmit}>
         Scorekeeper's Name:
         <input required type="text" placeholder="your name here" maxLength="30" onChange={(e) => handleChange(setName, e)} />
         <div id="teams-select">
           Home Team (taunt winner):
-          <select onClick={() => setHomeTeamSelected(true)} onChange={(e) => handleChange(setHomeTeam, e)} >
-            <option value="null" disabled={homeTeamSelected}> Select Team </option>
+          <select required onClick={() => setHomeTeamSelected(true)} onChange={(e) => handleChange(setHomeTeam, e)} >
+            <option value="" disabled={homeTeamSelected}> Select Team </option>
             {teamSelectOptions}
           </select><br/>
           "Visitor" Team:
-          <select onClick={() => setVisitorTeamSelected(true)} onChange={(e) => handleChange(setHomeTeam, e)} >
-            <option value="null" disabled={visitorTeamSelected}> Select Team </option>
+          <select required onClick={() => setVisitorTeamSelected(true)} onChange={(e) => handleChange(setVisitorTeam, e)} >
+            <option value="" disabled={visitorTeamSelected}> Select Team </option>
             {teamSelectOptions}
           </select>
+          <input type="submit" value="Create Game" />
         </div>
       </form>
+      <div id="live-score-card">
+        { gameCreated
+          ? <ScoreCard teamData={data.teams} selectedTeams={selectedTeams}/>
+          : null }
+      </div>
     </div>
   );
 };
