@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // import data from '../fakeData';
 
 
-const ScoreCard = ({ teamData, selectedTeams }) => {
+const ScoreCard = ({ teamData, home, visitor }) => {
   const [inning, setInning] = useState(1);
   const [outs, setOuts] = useState(0);
   const [visitorScore, setVisitorScore] = useState(0);
@@ -21,10 +21,11 @@ const ScoreCard = ({ teamData, selectedTeams }) => {
     totalScores(newRunsAdded, team);
   };
 
+  console.log('in ScoreCard home, visitor', home, visitor)
 
   return (
     <div id="score-card-main">
-      <div> {selectedTeams[0]} vs. {selectedTeams[1]} </div>
+      <h3> {visitor} vs {home} </h3>
       <div>
         <div id="scoreboard">
           <table className="scorecard-table">
@@ -41,7 +42,7 @@ const ScoreCard = ({ teamData, selectedTeams }) => {
             </thead>
             <tbody>
               <tr id="visitor-row">
-                <td> The Visitors! </td>
+                <td> {visitor} </td>
                 <td>
                   <input className="visitor-input" type="text" placeholder="0" onChange={(e) => handleChange(setNewRunsAdded, e)} />
                 </td>
@@ -62,7 +63,7 @@ const ScoreCard = ({ teamData, selectedTeams }) => {
                 </td>
               </tr>
               <tr id="home-row">
-                <td> Taunt Pros </td>
+                <td> {home} </td>
                 <td>
                   <input className="home-input" type="text" placeholder="0" onChange={(e) => handleChange(setNewRunsAdded, e)} />
                 </td>

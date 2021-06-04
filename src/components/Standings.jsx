@@ -36,36 +36,36 @@ const Standings = ({ data }) => {
       <Table className={classes.table} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell> Team </TableCell>
-            <TableCell align="right">  </TableCell>
-            <TableCell align="left"> Taunts </TableCell>
-            <TableCell align="right">  </TableCell>
-            <TableCell align="left"> Sports </TableCell>
-            <TableCell align="right">  </TableCell>
-            <TableCell align="right">  </TableCell>
+            <TableCell key="topHeader-0"> Team </TableCell>
+            <TableCell key="topHeader-1" align="right">  </TableCell>
+            <TableCell key="topHeader-2" align="left"> Taunts </TableCell>
+            <TableCell key="topHeader-3" align="right">  </TableCell>
+            <TableCell key="topHeader-4" align="left"> Sports </TableCell>
+            <TableCell key="topHeader-5" align="right">  </TableCell>
+            <TableCell key="topHeader-6" align="right">  </TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>  </TableCell>
-            <TableCell align="right"> W </TableCell>
-            <TableCell align="right"> L </TableCell>
-            <TableCell align="right"> W </TableCell>
-            <TableCell align="right"> L </TableCell>
-            <TableCell align="right"> Scored&nbsp;(runs) </TableCell>
-            <TableCell align="right"> Allowed&nbsp;(runs) </TableCell>
+            <TableCell key="header-0">  </TableCell>
+            <TableCell key="header-1" align="right"> W </TableCell>
+            <TableCell key="header-2" align="right"> L </TableCell>
+            <TableCell key="header-3" align="right"> W </TableCell>
+            <TableCell key="header-4" align="right"> L </TableCell>
+            <TableCell key="header-5" align="right"> Scored&nbsp;(runs) </TableCell>
+            <TableCell key="header-6" align="right"> Allowed&nbsp;(runs) </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
+              <TableCell key="body-0" component="th" scope="row">
                 {row.team}
               </TableCell>
-              <TableCell onClick={handleCellClick} align="right"> {row.tauntWs} </TableCell>
-              <TableCell align="right"> {row.tauntLs} </TableCell>
-              <TableCell align="right"> {row.wins} </TableCell>
-              <TableCell align="right"> {row.losses} </TableCell>
-              <TableCell align="right"> {row.scored} </TableCell>
-              <TableCell align="right"> {row.allowed} </TableCell>
+              <TableCell key="body-1" onClick={handleCellClick} align="right"> {row.tauntWs} </TableCell>
+              <TableCell key="body-2" align="right"> {row.tauntLs} </TableCell>
+              <TableCell key="body-3" align="right"> {row.wins} </TableCell>
+              <TableCell key="body-4" align="right"> {row.losses} </TableCell>
+              <TableCell key="body-5" align="right"> {row.scored} </TableCell>
+              <TableCell key="body-6" align="right"> {row.allowed} </TableCell>
             </TableRow>
           ))}
         </TableBody>
