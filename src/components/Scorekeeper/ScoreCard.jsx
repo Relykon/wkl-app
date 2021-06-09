@@ -1,10 +1,38 @@
 import React, { useState } from 'react';
-// import data from '../fakeData';
+import data from '../fakeData';
+import photos from '../teamphotos/ComicallyBad.jpg';
 
+console.log(photos)
 
-const ScoreCard = ({ teamData, home, visitor, name }) => {
+const { teams } = data;
+
+const innings = {
+  first: {
+    home: 0,
+    visitor: 0
+  },
+  second: {
+    home: 0,
+    visitor: 0
+  },
+  third: {
+    home: 0,
+    visitor: 0
+  },
+  fourth: {
+    home: 0,
+    visitor: 0
+  },
+  fifth: {
+    home: 0,
+    visitor: 0
+  }
+};
+
+const ScoreCard = ({ home, visitor, name }) => {
   let [inning, setInning] = useState(1);
   let [outs, setOuts] = useState(0);
+  let [fouls, setFouls] = useState(0);
   let [visitorScore, setVisitorScore] = useState(0);
   let [homeScore, setHomeScore] = useState(0);
   let [newRunsAdded, setNewRunsAdded] = useState(0);
@@ -23,17 +51,6 @@ const ScoreCard = ({ teamData, home, visitor, name }) => {
     setFunc(e.target.value);
   };
 
-  // const renderOutRadios = () => {
-  //   if (outs < 1) {
-  //     return <input id="1-out" type="radio" value="1" />
-  //   } else if (outs === 1) {
-  //     return <input id="1-out" type="radio" value="1" />
-  //     <input id="2-out" type="radio" value="2" />
-  //   }
-  // };
-
-  // const addClass = this.parentNode.getAttribute("id") === "visitor-row";
-
   const valueOptions = [
     <option value="0"> 0 </option>,
     <option value="1"> 1 </option>,
@@ -47,10 +64,25 @@ const ScoreCard = ({ teamData, home, visitor, name }) => {
     <option value="9"> 9 </option>
   ];
 
+  const teamPhotos = teams.filter(team => {
+    if (team.name === visitor || team.name === home) {
+      return true;
+    } else {
+      return false;
+    }
+  }).map(t => t.photo)
+
+  // const homePhoto = <img src={teamPhotos[1]} alt="home team" />;
+  // const stupidPhoto = <img src={require('../../assets/img/teamphotos/FremontTrolls.jpg')} />;
+
+  console.log('FILTERD', teamPhotos);
 
   return (
     <div id="score-card-main">
-      <h3> {visitor} vs {home} </h3>
+      <div>
+        <h3> {visitor} vs {home} </h3>
+        {/* {/* <img src={visitorPhoto} alt="visitor team" /> */}
+      </div>
       <div>
         <div id="scoreboard">
           <table className="scorecard-table">
@@ -69,27 +101,27 @@ const ScoreCard = ({ teamData, home, visitor, name }) => {
               <tr id="visitor-row" className='visitor-input'>
                 <td> {visitor} </td>
                 <td>
-                  <select onChange={(e) => updateScore(setVisitorScore, e)}>
+                  <select id="vis-first" onChange={(e) => updateScore(setVisitorScore, e)}>
                     {valueOptions.map(val => val)}
                   </select>
                 </td>
                 <td>
-                  <select onChange={(e) => updateScore(setVisitorScore, e)}>
+                  <select id="vis-second" onChange={(e) => updateScore(setVisitorScore, e)}>
                     {valueOptions.map(val => val)}
                   </select>
                 </td>
                 <td>
-                  <select onChange={(e) => updateScore(setVisitorScore, e)}>
+                  <select id="vis-third" onChange={(e) => updateScore(setVisitorScore, e)}>
                     {valueOptions.map(val => val)}
                   </select>
                 </td>
                 <td>
-                  <select onChange={(e) => updateScore(setVisitorScore, e)}>
+                  <select id="vis-fourth" onChange={(e) => updateScore(setVisitorScore, e)}>
                     {valueOptions.map(val => val)}
                   </select>
                 </td>
                 <td>
-                  <select onChange={(e) => updateScore(setVisitorScore, e)}>
+                  <select id="vis-fifth" onChange={(e) => updateScore(setVisitorScore, e)}>
                     {valueOptions.map(val => val)}
                   </select>
                 </td>
@@ -100,27 +132,27 @@ const ScoreCard = ({ teamData, home, visitor, name }) => {
               <tr id="home-row">
                 <td> {home} </td>
                 <td>
-                  <select onChange={(e) => updateScore(setHomeScore, e)}>
+                  <select id="home-first" onChange={(e) => updateScore(setHomeScore, e)}>
                     {valueOptions.map(val => val)}
                   </select>
                 </td>
                 <td>
-                  <select onChange={(e) => updateScore(setHomeScore, e)}>
+                  <select id="home-second" onChange={(e) => updateScore(setHomeScore, e)}>
                     {valueOptions.map(val => val)}
                   </select>
                 </td>
                 <td>
-                  <select onChange={(e) => updateScore(setHomeScore, e)}>
+                  <select id="home-third" onChange={(e) => updateScore(setHomeScore, e)}>
                     {valueOptions.map(val => val)}
                   </select>
                 </td>
                 <td>
-                  <select onChange={(e) => updateScore(setHomeScore, e)}>
+                  <select id="home-fourth" onChange={(e) => updateScore(setHomeScore, e)}>
                     {valueOptions.map(val => val)}
                   </select>
                 </td>
                 <td>
-                  <select onChange={(e) => updateScore(setHomeScore, e)}>
+                  <select id="home-fifth" onChange={(e) => updateScore(setHomeScore, e)}>
                     {valueOptions.map(val => val)}
                   </select>
                 </td>

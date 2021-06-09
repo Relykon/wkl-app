@@ -14,7 +14,6 @@ const CreateScoreCard = () => {
   const [visitorTeam, setVisitorTeam] = useState(null);
   const [homeTeamSelected, setHomeTeamSelected] = useState(false);
   const [visitorTeamSelected, setVisitorTeamSelected] = useState(false);
-  const [matchup, setMatchup] = useState([]);
 
   const teamSelectOptions = teams.map(t => {
     if (homeTeamSelected === true && homeTeam === t[1]) {

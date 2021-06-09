@@ -9,6 +9,7 @@ const Home = () => {
     <div>
       <h1>HOME PAGE!</h1>
       <Standings />
+      {/* <img src={require("src/assets/img/teamphotos/ComicallyBad.jpg")} alt="team"/> */}
     </div>
   );
 };
