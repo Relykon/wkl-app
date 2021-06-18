@@ -51,6 +51,10 @@ const ScoreCard = ({ home, visitor, name }) => {
     setFunc(e.target.value);
   };
 
+  handleGameSubmit = () => {
+    //submit me!
+  };
+
   const valueOptions = [
     <option value="0"> 0 </option>,
     <option value="1"> 1 </option>,

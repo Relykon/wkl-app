@@ -4,7 +4,7 @@ import ScoreCard from '../models/Scorekeeper/ScoreCard';
 
 export const createScoreCard = (req, res) => {
   console.log('IMA CARD!');
-  const { name, home. visitor } = req.body;
+  const { name, home, visitor } = req.body;
   const newScoreCard = new ScoreCard({
     date: new Date(),
     scorekeeper: name,
