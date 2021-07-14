@@ -51,9 +51,9 @@ const ScoreCard = ({ home, visitor, name }) => {
     setFunc(e.target.value);
   };
 
-  handleGameSubmit = () => {
-    //submit me!
-  };
+  // handleGameSubmit = () => {
+  //   //submit me!
+  // };
 
   const valueOptions = [
     <option value="0"> 0 </option>,
@@ -85,7 +85,7 @@ const ScoreCard = ({ home, visitor, name }) => {
     <div id="score-card-main">
       <div>
         <h3> {visitor} vs {home} </h3>
-        {/* {/* <img src={visitorPhoto} alt="visitor team" /> */}
+        <img src={photos} alt="visitor team" />
       </div>
       <div>
         <div id="scoreboard">
