@@ -49,7 +49,13 @@ const ScoreCard = ({ home, visitor, name }) => {
 
   const handleChange = (setFunc, e) => {
     setFunc(e.target.value);
+    console.log(inning)
   };
+
+  const resetRadios = () => {
+    const radio = document.querySelector('input[type=radio]:checked');
+    radio.checked = false;
+  }
 
   // handleGameSubmit = () => {
   //   //submit me!
@@ -76,16 +82,12 @@ const ScoreCard = ({ home, visitor, name }) => {
     }
   }).map(t => t.photo)
 
-  // const homePhoto = <img src={teamPhotos[1]} alt="home team" />;
-  // const stupidPhoto = <img src={require('../../assets/img/teamphotos/FremontTrolls.jpg')} />;
-
-  console.log('FILTERD', teamPhotos);
 
   return (
     <div id="score-card-main">
       <div>
         <h3> {visitor} vs {home} </h3>
-        <img src={photos} alt="visitor team" />
+        {/* <img src={photos} alt="visitor team" /> */}
       </div>
       <div>
         <div id="scoreboard">
@@ -171,6 +173,8 @@ const ScoreCard = ({ home, visitor, name }) => {
         <div onChange={(e) => handleChange(setOuts, e)}>
           Outs: {outs}
           <input id="1-out" type="radio" value="1" />
+          {/* <input id="2-out" type="radio" value="2" />
+          <input id="3-out" type="radio" value="3" /> */}
           {outs === "1"
             ? <input id="2-out" type="radio" value="2" />
             : null
@@ -185,11 +189,11 @@ const ScoreCard = ({ home, visitor, name }) => {
         </div>
       </div>
       {outs === "3"
-        ? <div onChange={(e) => handleChange(setInning, e)}>
+        ? <div>
             inning over ?
-            <input onChange={(e) => handleChange(setInning, e)} type="radio" value={inning++} name="inning-check"/> <br/>
+            <input onChange={() => {(setInning(inning++)); setOuts(0); resetRadios()}} type="radio" value={inning++} name="inning-check"/> <br/>
             Oops...not yet!
-            <input type="radio" value={inning} name="inning-check" />
+            <input onChange={(e) => {handleChange(setOuts, e); resetRadios()}} type="radio" value={2} name="inning-check" />
           </div>
         : null
       }
