@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ScoreCard from './ScoreCard';
 import data from '../fakeData';
-// import { createScoreCard } from '../../controllers/scoreCard';
+import { createScoreCard } from '../../controllers/scoreCard';
 
 const teams = data.teams.map((t) => {
   return [t._id, t.name];
@@ -33,7 +33,7 @@ const CreateScoreCard = () => {
     document.getElementById("add-score-card").reset();
     setHomeTeamSelected(false);
     setVisitorTeamSelected(false);
-    // console.log('createScoreCard:', createScoreCard());
+    console.log('createScoreCard:', createScoreCard());
   };
 
 

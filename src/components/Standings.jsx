@@ -56,16 +56,16 @@ const Standings = ({ data }) => {
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell key="body-0" component="th" scope="row">
+            <TableRow key={row.team}>
+              <TableCell key={'body-0' + row.team} component="th" scope="row">
                 {row.team}
               </TableCell>
               <TableCell key="body-1" onClick={handleCellClick} align="right"> {row.tauntWs} </TableCell>
-              <TableCell key="body-2" align="right"> {row.tauntLs} </TableCell>
-              <TableCell key="body-3" align="right"> {row.wins} </TableCell>
-              <TableCell key="body-4" align="right"> {row.losses} </TableCell>
-              <TableCell key="body-5" align="right"> {row.scored} </TableCell>
-              <TableCell key="body-6" align="right"> {row.allowed} </TableCell>
+              <TableCell key={'body-1' + row.team} align="right"> {row.tauntLs} </TableCell>
+              <TableCell key={'body-2' + row.team} align="right"> {row.wins} </TableCell>
+              <TableCell key={'body-3' + row.team} align="right"> {row.losses} </TableCell>
+              <TableCell key={'body-4' + row.team} align="right"> {row.scored} </TableCell>
+              <TableCell key={'body-5' + row.team} align="right"> {row.allowed} </TableCell>
             </TableRow>
           ))}
         </TableBody>

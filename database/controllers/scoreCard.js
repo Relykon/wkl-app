@@ -4,6 +4,7 @@ import ScoreCard from '../models/Scorekeeper/ScoreCard';
 
 export const createScoreCard = (req, res) => {
   console.log('IMA CARD!');
+  console.log('req bod', req.body);
   const { name, home, visitor } = req.body;
   const newScoreCard = new ScoreCard({
     date: new Date(),
@@ -14,9 +15,11 @@ export const createScoreCard = (req, res) => {
     }
   }).save(err => {
     if (err) {
+      console.log(err);
       return handleError(err);
     } else {
-      res.status(200).send("Score Card created!")
+      console.log("Score Card created!")
+      // res.status(200).send("Score Card created!")
     }
   });
 };
