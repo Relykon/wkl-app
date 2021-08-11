@@ -88,8 +88,8 @@ const fakeData = {
       },
       verified: true
     }
-  ];
-  teams = [
+  ],
+  teams : [
     {
       _id: 1,
       name: 'Dungeons & Ballers',

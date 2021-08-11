@@ -33,7 +33,7 @@ const CreateScoreCard = () => {
     document.getElementById("add-score-card").reset();
     setHomeTeamSelected(false);
     setVisitorTeamSelected(false);
-    createScoreCard();
+    createScoreCard(name, homeTeam, visitorTeam);
   };
 
 

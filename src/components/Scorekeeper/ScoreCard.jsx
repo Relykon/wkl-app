@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import data from '../fakeData';
-import photos from '../teamphotos/ComicallyBad.jpg';
+import data from '../../database/fakeData';
+import photos from '../../assets/img/teamphotos/ComicallyBad.jpg';
 
 console.log(photos)
 

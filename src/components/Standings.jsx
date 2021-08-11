@@ -8,7 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-import data from './fakeData';
+import data from '../database/fakeData';
 
 const useStyles = makeStyles({
   table: {
