@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 import ScoreCard from '../models/Scorekeeper/ScoreCard';
 
 export const createScoreCard = (req, res) => {
-  console.log('IMA CARD!');
   console.log('req bod', req.body);
   const { name, home, visitor } = req.body;
   const newScoreCard = new ScoreCard({
